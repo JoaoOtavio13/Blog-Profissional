@@ -19,6 +19,8 @@ class Instrumento(models.Model):
 class Usuario(models.Model):
     nome=models.CharField(max_length=200)
     idade=models.IntegerField()
+    data_nascimento=models.DateField()
+    cpf=models.CharField(max_length=200)
     email=models.EmailField()
     imagem=models.ImageField(upload_to='usuario/', null=True, blank=True)
     instituicao=models.ForeignKey(Instituicao, on_delete=models.CASCADE)

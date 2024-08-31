@@ -7,3 +7,13 @@ def index(request):
         'usuario':lista_usuario
     }
     return render(request, 'Perfil/index.html',context)
+
+def instituicao(request):
+    lista_instituicao=Instituicao.objects.all()
+    context={
+        'instituicao': lista_instituicao
+    }
+    return render(request, 'Perfil/instituicao.html',context)
+
+def hobbies(request):
+    return render(request,'Perfil/hobbies.html')

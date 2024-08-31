@@ -10,12 +10,6 @@ class Instituicao(models.Model):
     def __str__(self):
         return self.nome
 
-class Instrumento(models.Model):
-    nome=models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.nome
-
 class Usuario(models.Model):
     nome=models.CharField(max_length=200)
     idade=models.IntegerField()
@@ -23,8 +17,9 @@ class Usuario(models.Model):
     cpf=models.CharField(max_length=200)
     email=models.EmailField()
     imagem=models.ImageField(upload_to='usuario/', null=True, blank=True)
-    instituicao=models.ForeignKey(Instituicao, on_delete=models.CASCADE)
-    instrumento=models.ManyToManyField(Instrumento)
+    instituicao = models.ForeignKey(Instituicao, on_delete=models.CASCADE)
+
+
 
     def __str__(self):
         return self.nome

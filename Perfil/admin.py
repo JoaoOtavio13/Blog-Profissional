@@ -10,8 +10,9 @@ class UsuarioAdmin(admin.ModelAdmin):
         return format_html('<img src="{}" style="max-width:200px; max-height:200px"/>'.format(obj.imagem.url))
 
     image_tag.short_description = 'Image'
-    list_display=['nome','idade','email','cpf','data_nascimento','image_tag']
+    list_display=['nome','idade','email','cpf','data_nascimento','image_tag','instituicao']
 
-admin.site.register(Instituicao)
-admin.site.register(Instrumento)
+@admin.register(Instituicao)
+class InstituicaoAdmin(admin.ModelAdmin):
+    list_display=['nome','campos','curso','nivel']
     

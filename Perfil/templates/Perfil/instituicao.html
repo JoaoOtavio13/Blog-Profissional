@@ -1,0 +1,36 @@
+{% extends 'Perfil/index.html' %}
+
+{% block main %}
+<h2>Aqui está mais informações sobre o instituto que estudo: <span class="badge text-bg-secondary"></span></h2>
+<p>A construção da identidade do Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte tem sua marca na expansão, democratização e interiorização da educação profissional de qualidade, contribuindo, assim, para a inclusão social e possibilitando uma formação acadêmica sintonizada com as vocações territoriais e com as demandas formativas da população do campo e da cidade.
+
+    A educação profissional, entre outras coisas, diz respeito à criação de um ambiente de convivência e integração entre os diversos níveis de formação ofertados que abarca diversas as áreas de conhecimento, contribuindo assim com a construção de uma visão de responsabilidade e desenvolvimento social. Esse modelo integrado motiva a comunidade acadêmica e eleva os indicadores institucionais de desempenho, impactando diretamente no desenvolvimento dos territórios de abrangência onde o Instituto está inserido.
+    
+    A educação ofertada pelo IFRN diz respeito, também, à formação cidadã, imbuída de valores éticos – com visão que busca compreender os fenômenos em sua totalidade – e preparados para uma atuação voltada ao contexto social.
+    
+    Assim, a atuação do Instituto ultrapassa a estrita formação profissional e técnica para o trabalho, preocupando-se em incorporar outras dimensões da constituição humana e da vida em sociedade.
+    
+    Está presente em todo o estado do Rio Grande do Norte por meio de seus 22 campi, do Polo Embrapii Centro de Tecnologia Mineral Professor José Yvan Pereira Leite e da Reitoria.<span class="badge text-bg-secondary"></span></p>
+<h2>Minha trajetória: <span class="badge text-bg-secondary"></span></h2>
+<p>Entrei no campus em 2021 e atualmente estou no 4º e último ano do curso Técnico Integrado de Informática. Desde o início, o campus desempenhou um papel fundamental na minha trajetória acadêmica e pessoal. As experiências e aprendizados adquiridos aqui moldaram não apenas minhas habilidades técnicas, mas também meu crescimento como indivíduo. As interações com professores e colegas, bem como as atividades extracurriculares, contribuíram significativamente para minha formação e desenvolvimento. Estou ansioso para concluir esta etapa e aplicar tudo o que aprendi em minha futura carreira. <span class="badge text-bg-secondary"></span></p>
+    <div class="container mt-4">
+    <div class="row">
+        {% for instituicao in instituicao %}
+
+            <div class="col-md-12">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body d-flex">
+                        <div class="card-img" style="width: 300px; height: 200px; flex-shrink: 0;">
+                        <img src="/media/usuario/10338_Nota_Publica.width-500.png" alt="Imagem do Usuario" class="img-fluid" style="width: 100%; height: 50%; object-fit: cover; border-radius: 5px; margin-top: 10%;">
+                        </div>
+                        <div class="ml-3" style="flex-grow: 1;">
+                            <h5 class="card-title p-2 text-white bg-black">{{ instituicao.nome }}</h5>
+                            <p class="card-text">Curso: {{ instituicao.curso }}</p>
+                            <p class="card-text">Nivel: {{ instituicao.nivel }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+{% endfor %}
+{% endblock %}
